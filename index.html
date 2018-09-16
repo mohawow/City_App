@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Affortable cities</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container" >
+		<form id="form" class="row">
+			<h1> Affortable cities</h1>
+			<h3>Compare <span>cost of living</span> and <span> home prices</span> for the top 20 cities in tech outside of Silicon Valley</h3>
+			<input type="text" name="cityNameOne" list="cityNameOne" class="cityNameOne col-md-9" placeholder="City Name One">
+			<datalist id="cityNameOne"></datalist>
+			<input type="text" name="cityNameTWo" list="cityNameTWo" class="cityNameTwo col-md-9" placeholder="City Name Two">
+			<datalist id="cityNameTWo"></datalist>
+			<button type="submit">Compare</button>
+			<hr>
+		</form>
+		<div class="results">
+			<div class="cityWithImages" id="result1">
+				<p>House Rent</p>
+				<div class="cityImage">
+					<img src="#" alt="">
+					<p></p>
+				</div>
+				<div class="textBottom">
+				</div>
+			</div>
+			<div class="cityWithImages" id="result2">
+				<p>Cost of Living</p>
+				<div class="cityImage">
+					<img src="#" alt="">
+					<p></p>
+				</div>
+				<div class="textBottom">
+				</div>
+			</div>
+		</div>
+		<div class="barChart">
+			<div class="chart-container">
+				<canvas id="myChart" width="400" height="100"> </canvas>
+			</div>
+		</div>
+		<div class="piechart">
+			<div class="chart-container">
+				<canvas id="pieChart0" width="600" height="300"> </canvas>
+			</div>
+			<div class="chart-container">
+				<canvas id="pieChart1" width="600" height="300"> </canvas>
+			</div>
+			<div class="chart-container">
+				<canvas id="pieChart2" width="600" height="300"> </canvas>
+			</div>
+		</div>
+	</div>
+
+	<script  src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+	<script src="cityCodes.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
+
+
+
