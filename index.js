@@ -45,6 +45,7 @@ function dispalyResultDom2(cityName, cityData) {
 		<p> ${cityName} : $<span>${cityData}</span></p>
 	`
 };
+// try to break this down ......................
 function formSubmission() {
     $('#form').submit(function(e) {
         e.preventDefault();

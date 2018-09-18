@@ -1,4 +1,4 @@
-var cityNamesWithCodes=[
+const cityNamesWithCodes=[
     {
         "City": "Huntsville, AL",
         "Code": 113,
