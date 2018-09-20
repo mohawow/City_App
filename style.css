@@ -46,7 +46,10 @@ header h1{
 label{
     color: #fff;
 }
-h1, h3 {
+ul {
+    text-transform: uppercase;
+}
+h1, h3, h4, ul {
     color: white;
 }
 
