@@ -20,6 +20,7 @@ function filterData(result,cityName) {
             totalcostofliving=Math.round(totalcostofliving+value.average_price);
             detailsCostofLiving.push(Math.round(value.average_price));
         }
+        console.log(value.average_price)
     });
     $('#result1 .textBottom').append(dispalyResultDom(totalcostofliving,cityName));
     dataset1[i]=totalcostofliving;
