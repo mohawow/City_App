@@ -1,68 +1,22 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-	<title>Affortable Tech Cities</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <title>Affortable Tech Cities</title>
 </head>
 <body>
-	<header><h1> Affortable cities</h1></header>
-	<main class="container">
-		<h3>Compare cost of living and home prices for the top 20 cities in tech outside of Silicon Valley</h3>
-		<form id="form" class="row">
-			<fieldset>
-				<label for="cityNameOne">City Name</label>
-				<input type="text" name="cityNameOne" list="cityNameOne" class="cityNameOne col-md-9" placeholder="City Name One">
-				<datalist id="cityNameOne"></datalist>
-				<label for="cityNameTWo">City Name</label>
-				<input type="text" name="cityNameTWo" list="cityNameTWo" class="cityNameTwo col-md-9" placeholder="City Name Two">
-				<datalist id="cityNameTWo"></datalist>
-				<button type="submit">Compare</button>
-				<hr>
-		 	</fieldset>
-		</form>
-		<div class="results">
-			<div class="cityWithImages" id="result1">
-				<p>House Rent</p>
-				<div class="cityImage">
-					<img src="#" alt="">
-					<p></p>
-				</div>
-				<div class="textBottom">
-				</div>
-				<!-- use section -->
-			</div>
-			<div class="cityWithImages" id="result2">
-				<p>Cost of Living</p>
-				<div class="cityImage">
-					<img src="#" alt="">
-					<p></p>
-				</div>
-				<div class="textBottom">
-				</div>
-			</div>
-		</div>
-		<div class="barChart">
-			<div class="chart-container">
-				<canvas id="myChart" width="400" height="100"> </canvas>
-			</div>
-		</div>
-		<div class="piechart">
-			<div class="chart-container">
-				<canvas id="pieChart0" width="600" height="300"> </canvas>
-			</div>
-			<div class="chart-container">
-				<canvas id="pieChart1" width="600" height="300"> </canvas>
-			</div>
-			<div class="chart-container">
-				<canvas id="pieChart2" width="600" height="300"> </canvas>
-			</div>
-		</div>
-	</main>
-	<script  src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-    <script src="cityCodes.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-	<script src="index.js"></script>
+<main class="container">
+    <h1> Affortable cities</h1>
+    <div class="startBox">
+        <div class="startBoxContent">
+            <p>Compare cost of living and home prices for the top 20 cities in tech outside of Silicon Valley</p>
+            <a href="index2.html"><button>Start</button></a>
+        </div>
+    </div>
+</main>
 </body>
 </html>

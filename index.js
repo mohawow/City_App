@@ -1,6 +1,6 @@
 const NUMBEO_URL = 'https://cors-anywhere.herokuapp.com/https://www.numbeo.com/api/city_prices?api_key=sx4z80hb0fuss2&query=';
 var dataset1=[],dataset2=[], cityNameOne, cityNameTwo,detailsCostofLiving=[],i=0,j=0, cityImageOne,cityImageTwo;
-
+$('.hiddenP').hide();
 function getCityName(){
     $.each(cityNamesWithCodes, function (index, value) {
         $('#cityNameOne').append('<option value="' + value.City + '">');
@@ -45,6 +45,20 @@ function dispalyResultDom2(cityName, cityData) {
 		<p> ${cityName} : $<span>${cityData}</span></p>
 	`
 };
+function errorHandler() {
+    if ( cityNameOne.length === 0 || cityNameTwo.length === 0 ){
+        alert('Sorry! You can not compare an empty field. Please try again!');
+        return cityNameOne;
+    };
+};
+function getCityCode() {
+    cityCodeOne=0;
+    cityCodeTwo=0
+    $.each(cityNamesWithCodes, function( index, value ) {
+        if (cityNameOne===value.City) {cityCodeOne=value.Code; cityImageOne=value.image;}
+        if (cityNameTwo===value.City) {cityCodeTwo=value.Code; cityImageTwo=value.image;}
+    });
+};
 // try to break this down ......................
 function formSubmission() {
     $('#form').submit(function(e) {
@@ -52,23 +66,16 @@ function formSubmission() {
         $.ajaxSetup({
             async: false
         });
+        $('.hiddenP').show();
         $('#result1 .textBottom').html('');
         $('#result2 .textBottom').html('');
         cityNameOne= $('.cityNameOne').val();
         cityNameTwo= $('.cityNameTwo').val();
-        if ( cityNameOne.length === 0 || cityNameTwo.length === 0 ){
-            alert('Sorry! You can not compare an empty field. Please try again!');
-            return cityNameOne;
-        };
+        errorHandler();
         $('.cityNameOne').val('');
         $('.cityNameTwo').val('');
         i=0,j=0;
-        cityCodeOne=0;
-        cityCodeTwo=0
-        $.each(cityNamesWithCodes, function( index, value ) {
-            if (cityNameOne===value.City) {cityCodeOne=value.Code; cityImageOne=value.image;}
-            if (cityNameTwo===value.City) {cityCodeTwo=value.Code; cityImageTwo=value.image;}
-        });
+        getCityCode();
         $('#result1 img').attr("src", cityImageOne);
         $('#result2 img').attr("src", cityImageTwo);
         $('#result1 .cityImage p').text(cityNameOne);
@@ -89,11 +96,11 @@ function showGraph(dataset1, dataset2 ) {
         labels: ['Rent Prices','Cost of Living'],
         datasets: [{
             label: cityNameOne,
-            backgroundColor: ["#C21460","#99ff9e"],
+            backgroundColor: ["#C21460","#C21460"],
             data: dataset1
         }, {
             label: cityNameTwo,
-            backgroundColor: ["#C21460","#C21460"],
+            backgroundColor: ["#99ff9e","#99ff9e"],
             data: dataset2
         }]
     };
@@ -103,10 +110,32 @@ function showGraph(dataset1, dataset2 ) {
         type: 'bar',
         data: barChartData,
         options: {
+            maintainAspectRatio: false,
+            legend: {
+                labels: {
+                    fontColor: "white"
+                }
+            },
             scales: {
                 yAxes: [{
+                    gridLines: {
+                        display: true,
+                        color:"white"
+                    },
                     ticks: {
+                        fontColor: "white",
                         beginAtZero:true
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: true,
+                        color:"white"
+                    },
+                    ticks: {
+                        fontColor: "white",
+                        fontSize: 14,
+                        beginAtZero: true
                     }
                 }]
             }
@@ -134,9 +163,16 @@ function showPieChart(cityName,dataArray){
             type: 'pie',
             data: pieConfig,
             options: {
+                maintainAspectRatio: false,
+                legend: {
+                    labels: {
+                        fontColor: "white"
+                    }
+                },
                 title: {
                     display: true,
-                    text: 'Cost of Living for : ' + value
+                    text: 'Cost of Living for : ' + value,
+                    fontColor: "white"
                 }
             }
         });

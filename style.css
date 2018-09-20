@@ -6,11 +6,28 @@ html{
      height: 100%;
 }
 body {
-    background:url("skies.jpg") no-repeat;
-    background-size: cover;
-    overflow-x: hidden;
-    border: 1px solid white;
-    height: 100%;
+    background: url('skies.jpg') no-repeat;
+    background-size: 100% 174%;
+}
+fieldset{
+    border: none;
+}
+.startBox p{
+    height: 400px;
+    align-items: center;
+}
+.startBox a{
+    align-items: center;
+}
+.startBoxContent{
+    padding: 10px;
+    width: 1100px;
+}
+.startBoxContent p{
+    color: white;
+}
+.labelHide{
+    display: none;
 }
 .container {
     width: 1174px;
@@ -20,15 +37,17 @@ body {
     text-align: center;
 
 }
+header h1{
+    text-align: center;
+}
 #form{
     margin-bottom: 10px;
 }
 label{
-    display: block;
+    color: #fff;
 }
 h1, h3 {
     color: white;
-    text-shadow: 1px 2px 4px #000000;
 }
 
 li{
@@ -92,13 +111,15 @@ div {
 .results{
     display: flex;
 }
+.results .cityWithImages p{
+    color: white;
+}
 .results .cityWithImages{
     float: left;
     width: 45%;
     padding: 30px 30px;
     margin: 0 auto;
     background-color:rgb(0, 0, 0, 0.7);
-    color: black;
     font-size: 1em;
 }
 .results .cityWithImages img{
@@ -115,19 +136,32 @@ div {
     padding: 5px;
     float: left;
     position: absolute;
-    background: rgba(255,255,255,0.8);
+    background: rgba(0,0,0,0.8);
 }
 
 @media (max-width: 1024px) {
-    .container {
+    .container, .startBoxContent{
         width: 850px;
     }
 }
-@media only screen and (min-width : 320px) and (max-width : 480px) {
-    .container {
+@media (max-width: 768px) {
+    .container, .startBoxContent {
+        width: 720px;
+    }
+}
+@media only screen and (min-width : 320px) and (max-width : 481px) {
+    body{
+        background: #010A59;
+    }
+    .container, .startBoxContent {
         width: 400px;
         margin: 0 auto;
         overflow: hidden;
+    }
+    input[type=text], select, button {
+        width: 90%;
+        display: block;
+        margin: 0 auto 10px auto;
     }
     .results{
         display: block;
